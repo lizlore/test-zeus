@@ -1,0 +1,56 @@
+<mat-card class="container-form">
+  <form [formGroup]="form" (ngSubmit)="save($event)">
+    <mat-card-header class="header">Agregar empleado</mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field class="element">
+            <input
+              placeholder="Nombre"
+              formControlName="name"
+              matInput
+              type="text"
+              maxlength="30"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field class="element">
+            <input
+              placeholder="Apellidos"
+              formControlName="last_name"
+              matInput
+              type="text"
+              maxlength="30"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="birthday"
+              [max]="maxdate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="button-save">
+      <button [disabled]="form.invalid" color="primary" mat-raised-button type="submit">
+        Guardar
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
