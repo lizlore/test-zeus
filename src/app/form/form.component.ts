@@ -12,7 +12,7 @@ export class FormComponent {
   form: any;
   date: Date;
   maxdate: Date;
-  datePipe = new DatePipe('es-ES');
+  datePipe = new DatePipe('en');
 
   constructor(
     private FormBuilder: FormBuilder,
@@ -33,7 +33,7 @@ export class FormComponent {
     if (this.form.valid) {
       this.form.value.birthday = this.datePipe.transform(
         this.form.value.birthday,
-        'yyyy-MM-dd'
+        'yyyy/MM/dd'
       );
       const employe = this.form.value;
       this.employeService.createEmploye(employe).subscribe((element) => {

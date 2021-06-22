@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { CarouselComponent } from './carousel/carousel.component';
 import { GroupsComponent } from './groups/groups.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { GroupsComponent } from './groups/groups.component';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    IvyCarouselModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es-ES' }, DatePipe],
   bootstrap: [AppComponent],
